@@ -19,6 +19,7 @@
 		82DC91FA17150F3700864108 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DC91F917150F3700864108 /* ViewController.m */; };
 		82DC920417150F5200864108 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DC920317150F5200864108 /* QuartzCore.framework */; };
 		82DC920717150F8800864108 /* IrregularView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DC920617150F8700864108 /* IrregularView.m */; };
+		82DC92091715125A00864108 /* 2013011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82DC92081715125A00864108 /* 2013011.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		82DC920317150F5200864108 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		82DC920517150F8700864108 /* IrregularView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrregularView.h; sourceTree = "<group>"; };
 		82DC920617150F8700864108 /* IrregularView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrregularView.m; sourceTree = "<group>"; };
+		82DC92081715125A00864108 /* 2013011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2013011.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		82DC91E717150F3700864108 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				82DC92081715125A00864108 /* 2013011.jpg */,
 				82DC91E817150F3700864108 /* IrregularView-Info.plist */,
 				82DC91E917150F3700864108 /* InfoPlist.strings */,
 				82DC91EC17150F3700864108 /* main.m */,
@@ -168,6 +171,7 @@
 				82DC91F317150F3700864108 /* Default.png in Resources */,
 				82DC91F517150F3700864108 /* Default@2x.png in Resources */,
 				82DC91F717150F3700864108 /* Default-568h@2x.png in Resources */,
+				82DC92091715125A00864108 /* 2013011.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +300,7 @@
 				82DC920217150F3700864108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

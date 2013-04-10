@@ -45,7 +45,7 @@
 //    }
 //    //=========================================================================
 
-    [self.tempPath moveToPoint:CGPointMake(160, 260)];
+    [self.tempPath moveToPoint:CGPointMake(80, 200)];
     [self.tempPath addLineToPoint:CGPointMake(160, 260)];
     //=========================================================================
     //不加圆角
