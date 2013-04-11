@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "IrregularView.h"
+#import "PointsView.h"
 
 @interface ViewController (){
     IrregularView *irregular;
@@ -25,16 +26,30 @@
     irregular = [[IrregularView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
     [self.view addSubview:irregular];
     irregular.image = [UIImage imageNamed:@"2013011.jpg"];
-    
+    irregular.trackPoints = [NSArray arrayWithObjects:[NSValue valueWithCGPoint:CGPointMake(40, 120)],
+                             [NSValue valueWithCGPoint:CGPointMake(150, 290)],
+                             [NSValue valueWithCGPoint:CGPointMake(280, 100)],
+                             [NSValue valueWithCGPoint:CGPointMake(280, 50)],
+                             [NSValue valueWithCGPoint:CGPointMake(150, 50)],
+                             nil];
+    irregular.cornerRadius = 30;
     [irregular setMask];
-    
+
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImage:)];
     [irregular addGestureRecognizer:tap];
+    
+//    PointsView *pointView = [[PointsView alloc] initWithFrame:CGRectMake(10, 200, 300, 200)];
+//    pointView.trackPoints = [NSArray arrayWithObjects:[NSValue valueWithCGPoint:CGPointMake(40, 120)],
+//                             [NSValue valueWithCGPoint:CGPointMake(150, 190)],
+//                             [NSValue valueWithCGPoint:CGPointMake(280, 100)],
+//                             [NSValue valueWithCGPoint:CGPointMake(280, 50)],
+//                             [NSValue valueWithCGPoint:CGPointMake(150, 50)],
+//                             nil];
+//    [self.view addSubview:pointView];
 }
 
 - (void)tapImage:(UITapGestureRecognizer *)tapGestrue{
     CGPoint tapPoint = [tapGestrue locationInView:tapGestrue.view];
-    NSLog(@"%@",irregular.tempPath);
     if ([irregular.tempPath containsPoint:tapPoint]) {
         NSLog(@"点击图片：");
     }
