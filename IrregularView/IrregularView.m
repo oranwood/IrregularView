@@ -70,40 +70,19 @@
         for (int i = 1; i<[muaarray count]; i=i+3) {
             CGPoint firstP;
             CGPoint nextP;
-            CGPoint middle;
             CGPoint pointP;
             if (i<[muaarray count]-3) {
                 firstP = [[muaarray objectAtIndex:i+1] CGPointValue];
                 nextP  = [[muaarray objectAtIndex:i+3] CGPointValue];
                 pointP  = [[muaarray objectAtIndex:i+2] CGPointValue];
-                middle = CGPointMake((firstP.x+nextP.x)/2, (firstP.y+nextP.y)/2);
             }else if (i==[muaarray count]-2){
                 firstP = [[muaarray objectAtIndex:i+1] CGPointValue];
                 nextP  = [[muaarray objectAtIndex:1] CGPointValue];
                 pointP  = [[muaarray objectAtIndex:0] CGPointValue];
-                middle = CGPointMake((firstP.x+nextP.x)/2, (firstP.y+nextP.y)/2);
             }
-            
-            float PP = sqrtf((pointP.x-nextP.x)*(pointP.x-nextP.x) + (pointP.y-nextP.y)*(pointP.y-nextP.y));
-            float PM = sqrtf((pointP.x-middle.x)*(pointP.x-middle.x) + (pointP.y-middle.y)*(pointP.y-middle.y));
-            float P1M = sqrtf((firstP.x-middle.x)*(firstP.x-middle.x) + (firstP.y-middle.y)*(firstP.y-middle.y));
-            
-            float R = PP*P1M/PM;
-            float OM = P1M*P1M/PM;
-            float MN = R-OM;
-            float PN = PM-MN;
-            
-            float offX = (middle.x-pointP.x)*PN/PM;
-            float offY = (middle.y-pointP.y)*PN/PM;
-            
-            CGPoint finalP;
-            finalP.x = pointP.x+offX;
-            finalP.y = pointP.y+offY;
-            
             [arrayM addObject:[NSValue valueWithCGPoint:firstP]];
             [arrayM addObject:[NSValue valueWithCGPoint:pointP]];
             [arrayM addObject:[NSValue valueWithCGPoint:nextP]];
-            
         }
         
         //set the path of maskLayer.
