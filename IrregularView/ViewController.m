@@ -32,7 +32,8 @@
                              [NSValue valueWithCGPoint:CGPointMake(280, 50)],
                              [NSValue valueWithCGPoint:CGPointMake(150, 50)],
                              nil];
-    irregular.cornerRadius = 30;
+    irregular.cornerRadius = 3;
+    irregular.borderWidth = 3;
     [irregular setMask];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImage:)];
