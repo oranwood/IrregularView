@@ -26,15 +26,18 @@
     irregular = [[IrregularView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
     irregular.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:irregular];
+    
 //    irregular.image = [UIImage imageNamed:@"2013011.jpg"];
-    irregular.font = [UIFont fontWithName:@"Cochin-Bold" size:170];
+    irregular.font = [UIFont fontWithName:@"Chalkduster" size:150];
     irregular.textColor = [UIColor redColor];
     irregular.text = @" VS";
-    irregular.trackPoints = [NSArray arrayWithObjects:[NSValue valueWithCGPoint:CGPointMake(40+10, 80)],
-                             [NSValue valueWithCGPoint:CGPointMake(160+10, 250)],
-                             [NSValue valueWithCGPoint:CGPointMake(280+10, 80)],
-                             [NSValue valueWithCGPoint:CGPointMake(240+10, 30)],
-                             [NSValue valueWithCGPoint:CGPointMake(80+10, 30)],
+    
+    float offsetX = 20;
+    irregular.trackPoints = [NSArray arrayWithObjects:[NSValue valueWithCGPoint:CGPointMake(40+offsetX, 80)],
+                             [NSValue valueWithCGPoint:CGPointMake(160+offsetX, 250)],
+                             [NSValue valueWithCGPoint:CGPointMake(280+offsetX, 80)],
+                             [NSValue valueWithCGPoint:CGPointMake(240+offsetX, 30)],
+                             [NSValue valueWithCGPoint:CGPointMake(80+offsetX, 30)],
                              nil];
     irregular.cornerRadius = 3;
     irregular.borderWidth  = 10;
@@ -42,7 +45,7 @@
     [irregular setMask];
     
     CGPoint center =self.view.center;
-    center.x = center.x-10;
+    center.x = center.x-offsetX;
     irregular.center = center;
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImage:)];
@@ -61,7 +64,7 @@
 - (void)tapImage:(UITapGestureRecognizer *)tapGestrue{
     CGPoint tapPoint = [tapGestrue locationInView:tapGestrue.view];
     if ([irregular.tempPath containsPoint:tapPoint]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"點到勒"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Do! Not! Touch Me, Anymore!"
                                                        delegate:self
                                               cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
