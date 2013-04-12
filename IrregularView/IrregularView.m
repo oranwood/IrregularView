@@ -132,7 +132,7 @@
     CAShapeLayer *maskBorderLayer = [CAShapeLayer layer];
     maskBorderLayer.path = [self.tempPath CGPath];
     maskBorderLayer.fillColor = [[UIColor clearColor] CGColor];
-    maskBorderLayer.strokeColor = [[UIColor blueColor] CGColor];
+    maskBorderLayer.strokeColor = [self.borderColor CGColor];
     maskBorderLayer.lineWidth = self.borderWidth;
     [self.layer addSublayer:maskBorderLayer];
     
